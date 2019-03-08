@@ -19,7 +19,7 @@ export const searchBlur = () => ({
 
 export const getHotKeyList = ()=>{
   return (dispatch) => {
-    axios.get('/api/headerList.json',{})
+    axios.get('/api/headerList.json')
       .then( (res) => {
         const data = res.data
         if(data.success){
