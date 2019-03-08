@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'  // 子元素只能一个div包裹
-import { BrowserRouter, Route} from 'react-router-dom'
+import { HashRouter , Route} from 'react-router-dom'
 import { GlobalStyle } from './style.js'
 import { GlobalStyleIcon } from './statics/iconFont/iconfont'
 import Header from './common/header'
@@ -19,7 +19,7 @@ class App extends Component {
         <GlobalStyleIcon />
         <Provider store = { store }
           >
-            <BrowserRouter>
+            <HashRouter>
               <div>
                 <Header></Header>
                 <Route path='/' exact component={ Home } ></Route>
@@ -27,7 +27,7 @@ class App extends Component {
                 <Route path='/write' exact component={ Write } ></Route>
                 <Route path='/detail/:id' exact component={ Detail } ></Route>
               </div>
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
       </div>
     );
